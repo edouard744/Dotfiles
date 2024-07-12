@@ -1,0 +1,20 @@
+return {
+    'voldikss/vim-floaterm',
+    keys = {
+        { '<F1>', ':FloatermToggle<CR>' },
+        { '<F1>', '<Esc>:FloatermToggle<CR>', mode = 'i' },
+        { '<F1>', '<C-\\><C-n>:FloatermToggle<CR>', mode = 't' },
+    },
+    cmd = { 'FloatermToggle' },
+    init = function()
+        vim.g.floaterm_width = 0.8
+        vim.g.floaterm_height = 0.8
+        vim.g.floaterm_title = false
+        vim.g.floaterm_borderchars = ''
+        vim.cmd([[
+          highlight link Floaterm CursorLine
+          highlight link FloatermBorder CursorLineBg
+]])
+
+    end,
+}
