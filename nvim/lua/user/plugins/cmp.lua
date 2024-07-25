@@ -114,6 +114,7 @@ return {
         -- { name = 'copilot' },
         { name = 'buffer' },
         { name = 'path' },
+        { name = 'html' },
       },
       experimental = {
         -- ghost_text = true,
