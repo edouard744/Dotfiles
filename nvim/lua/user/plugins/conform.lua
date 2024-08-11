@@ -15,6 +15,8 @@ return {
 				json = { "prettier" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
+                php = { "prettier"},
+                blade=  { "prettier"},
 				lua = { "stylua" },
 				python = { "isort", "black" },
 			},

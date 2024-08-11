@@ -20,7 +20,6 @@ return {
 		require("mason-lspconfig").setup({ automatic_installation = true })
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
 		-- PHP
 		require("lspconfig").intelephense.setup({
 			commands = {
@@ -144,6 +143,7 @@ return {
 							".prettierrc.yml",
 							".prettierrc.js",
 							"prettier.config.js",
+                            "node_modules/.bin/prettier",
 						})
 					end,
 				}),
@@ -181,7 +181,7 @@ return {
 
 		-- Diagnostic configuration
 		vim.diagnostic.config({
-			virtual_text = false,
+			virtual_text = true,
 			float = {
 				source = true,
 			},
