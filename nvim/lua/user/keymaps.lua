@@ -50,6 +50,8 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv")
 keymap("n", "<leader>n", ":ASToggle<CR>", {})
 keymap("n", ",", "^")
 keymap("n", ";", "$")
+keymap("v", ",","^")
+keymap("v", ";", "$")
 vim.api.nvim_set_keymap(
 	"n",
 	"<F3>",
