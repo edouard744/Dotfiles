@@ -1,10 +1,15 @@
 local keymap = require("user.lib.utils").keymap
+local keyset = vim.keymap.set
+local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
+
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 keymap("n", "<leader>k", ":nohlsearch<CR>")
 keymap("n", "<leader>Q", ":bufdo bdelete<CR>")
+keymap("n", "<leader>b", ":bd<CR>")
+
 
 -- Allow gf to open non-existent files
 keymap("", "gf", ":edit <cfile><CR>")
@@ -53,8 +58,26 @@ keymap("n", ";", "$")
 keymap("v", ",","^")
 keymap("v", ";", "$")
 vim.api.nvim_set_keymap(
-	"n",
-	"<F3>",
-	":lua local save_pos = vim.fn.getpos('.') vim.cmd('normal! gg=G') vim.fn.setpos('.', save_pos)<CR>",
-	{ noremap = true, silent = true }
+    "n",
+    "<F3>",
+    ":lua local save_pos = vim.fn.getpos('.') vim.cmd('normal! gg=G') vim.fn.setpos('.', save_pos)<CR>",
+    { noremap = true, silent = true }
 )
+
+-- keymap("n", "<leader>C", ":CocCommand<CR>", {})
+--
+-- -- Pour :CocCommand flutter.run
+-- keymap("n", "<leader>cr", ":CocCommand flutter.run<CR>", {})
+--
+-- -- Pour :CocCommand flutter.doctor
+-- keymap("n", "<leader>cd", ":CocCommand flutter.doctor<CR>", {})
+--
+-- -- Pour :CocCommand flutter.devices
+-- keymap("n", "<leader>cp", ":CocCommand flutter.devices<CR>", {})
+
+
+-- keyset("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+-- keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
+-- keyset("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
+
+

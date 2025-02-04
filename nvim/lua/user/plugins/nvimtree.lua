@@ -17,10 +17,22 @@ return {
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
   },
 })
   end,
-    vim.keymap.set('n','<Leader>&', ':NvimTreeFindFileToggle<CR>')
-}
+-- if not open :NvimTreeFindFileToggle, if open :NvimTreeFocus and if already focused :NvimTreeFindFileToggle
+vim.keymap.set('n', '<Leader>&', function()
+  local view = require('nvim-tree.view')
+  if view.is_visible() then
+    if vim.api.nvim_get_current_win() == view.get_winnr() then
+      vim.cmd('NvimTreeFindFileToggle')
+    else
+      vim.cmd('NvimTreeFocus')
+    end
+  else
+    vim.cmd('NvimTreeFindFileToggle')
+  end
+end, { silent = true })}
+  
 
