@@ -6,9 +6,7 @@ DOTFILES=$(cd $(dirname "{BASH_SOURCE[0]}") && pwd)
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/Code/github/dotfiles/nvim $HOME/.config/nvim
 
-# Kitty
-rm -rf $HOME/.config/kitty
-ln -s $DOTFILES/Code/github/dotfiles/kitty $HOME/.config/kitty
+
 
 # Tmux
 rm -rf $HOME/.tmux.conf
