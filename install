@@ -6,8 +6,6 @@ DOTFILES=$(cd $(dirname "{BASH_SOURCE[0]}") && pwd)
 rm -rf $HOME/.config/nvim
 ln -s $DOTFILES/Code/github/dotfiles/nvim $HOME/.config/nvim
 
-
-
 # Tmux
 rm -rf $HOME/.tmux.conf
 ln -s $DOTFILES/Code/github/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
@@ -20,5 +18,3 @@ ln -s $DOTFILES/Code/github/dotfiles/scripts/t $HOME/.local/bin/t
 # NVM (Node Version Manager)
 mkdir -p $HOME/.nvm
 ln -sf $DOTFILES/Code/github/dotfiles/nvm/default-packages $HOME/.nvm/default-packages
-
-
