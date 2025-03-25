@@ -1,5 +1,11 @@
-require('user/options')
-require('user/keymaps')
-require('user/lazy')
+require('config.EcoVim')
 
+require('utils.globals')
+require('utils.functions')
 
+require('config.options')
+require('config.lazy')
+require('config.keymappings')
+require('config.autocmds')
+
+require('internal.cursorword')
